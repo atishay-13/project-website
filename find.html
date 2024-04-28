@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Jobs</title>
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+      }
+
+      body {
+          margin: 0;
+          padding-bottom: 60px;
+          position: relative;
+          background-color: #FEFDED;
+      }
+
+      /* CSS for Job Listings */
+      .job-listings {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 20px;
+      }
+
+      .job {
+          background-color: #31363F;
+          padding: 20px;
+          border-radius: 10px;
+          color:#FAEED1;
+          transition: all 0.3s ease;
+      }
+
+      .job:hover {
+          
+          transform: translateY(-5px);
+      }
+
+      .job h3 {
+          margin-top: 0;
+      }
+
+      .job p {
+          margin: 5px 0;
+      }
+
+      .job button {
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+      }
+
+      .job button:hover {
+          background-color: #45a049;
+      }
+      #login a,
+      #signup a,
+      #title a {
+          text-decoration: none; /* Remove underline */
+          color: inherit; /* Inherit text color */
+          padding: 5px; /* Add padding to ensure consistent size */
+          margin: 0; 
+          font-family: 'Roboto', sans-serif; /* Use Roboto font */
+      }
+      /* Add this CSS to your existing stylesheet */
+
+      #login a:hover,
+      #signup a:hover,
+      #title a:hover {
+          color:#EBD9B4;
+
+      }
+
+      #login a{
+
+      }
+      #signup a{
+
+      }
+      #title a {
+
+      }
+
+      #login {
+          padding-left: 30%;
+          padding-right: 1.5%;
+          text-align: right;
+          list-style-type: none;
+      }
+
+      #signup {
+          padding-left: 4.5%;
+          padding-right: 0%;
+          text-align: right;
+          list-style-type: none;
+          cursor: pointer;
+
+      }
+
+
+
+      #title {
+          padding-right: 20%;
+          text-align: left;
+          list-style-type: none;
+          cursor: pointer;
+      }
+
+      #logo {
+          float: left;
+          padding-left: 10px;
+          width: 100px;
+          height: 100px;
+          margin-right: 10px;
+          border-radius: 50%;
+          shape-outside: circle(50%);
+      }
+      #logo:hover{
+          transform: scale(1.1);
+      }
+
+      #containerlogo {
+          background-color: #31363F;
+          color: #F7EEDD;
+          font-weight: bold;
+          margin-top:13px;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          width: 100%; /* Adjusted width */
+      }
+
+      ul {
+          list-style-type: none;
+      }
+
+      li {
+          display: inline;
+          padding: 3%;
+          font-size: 25px;
+      }
+
+      /* Section that contains list of pages - color can be used #58A399 #A25772*/
+      #list1 {
+          background-color: #FEFDED;
+          font-size: 20px;
+          font-weight: bold;
+          padding-top: 1%;
+          padding-bottom: 1%;
+          width: 100%; /* Adjusted width */
+      }
+
+      nav ul {
+          list-style-type: none;
+          background-color: #76ABAE;
+          font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+
+        padding-top: 8px;
+        padding-bottom: 8px;
+          width: 100%; /* Adjusted width */
+      }
+
+      nav ul li {
+          display: inline;
+          padding: 0 20px;
+          word-spacing: 10px;
+          cursor: pointer;
+      }
+
+      nav ul li a {
+          text-decoration: none;
+          color: #161A30;
+          margin: 0 12px;
+      }
+
+      #list1 a {
+          text-decoration: none; 
+          color: inherit; 
+          padding: 15px; 
+          margin: 0; 
+          font-family: 'Roboto', sans-serif; 
+          transition: color 0.3s; 
+      }
+
+      #list1 a:hover {
+          color: #F1EEDC;
+          border-radius: 5px; 
+          padding: 15px; 
+          margin: 0;
+      }
+      footer {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 60px;
+          background-color: #003e79;
+          color: white;
+          text-align: center;
+          line-height: 60px;
+      }
+
+      .container {
+        padding: 10px;
+        background-color: #BED1CF;
+        
+        border-radius: 10px;
+        margin-bottom: 20px;
+        margin-top: 15px;
+      }
+      .container  ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+        /* Allow list items to wrap onto the next line */
+      }
+      .container  li {
+          font-family: Arial, sans-serif;
+          font-size: 16px;
+          margin-bottom: 5px;
+          color: black;
+          width: calc(33.33% - 5px); /* Divide equally into three columns with a 10px margin */
+          margin-right: 5px;
+          box-sizing: border-box; /* Include padding and border in the width calculation */
+      }
+      #container1 {
+          padding: 20px;
+          background-color: #76ABAE;
+          color:#222831
+          border-radius: 10px;
+          margin-bottom: 20px;
+      }
+
+      /* CSS for headings */
+      h2 {
+          padding : 10px;
+          font-family: Arial, sans-serif;
+          font-size: 24px;
+          margin-bottom: 10px;
+          color: #333;
+         
+      }
+      .slider {
+          text-align: center;
+        padding-bottom: 5px;
+      }
+
+      .slider h2 {
+          font-size: 30px;
+          color: #944E63;
+          padding-bottom: 10px;
+          word-spacing: 10px;
+      }
+
+      #frelanceimg {
+          width: 100%;
+          padding-left: 0px;
+          float: center;
+          transition: none;
+          transform: none;
+      }
+    </style>
+</head>
+<body>
+  <div id="containerlogo">
+    <ul>
+      <img id="logo" src="logo.png">
+      <li id="title"><a href="index.html">FREELANCE FLY</a></li>
+      <li id="login"><a href="login.html">LOGIN</a></li>
+      <li id="signup"><a href="signup.html">SIGNUP</a></li> 
+    </ul>
+  </div>
+
+  <div id="list1">
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="find.html">FIND JOBS</a></li>
+        <li><a href="hire.html">HIRE FREELANCERS</a></li>
+        <li><a href="freelance.html">GET IDEAS</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="slider">
+    <h2>MAKE YOUR TALENT YOUR JOB WITH FREELANCE FLY</h2>
+    <img id="frelanceimg" src="job.jpeg" alt="job Image">
+  </div>
+
+  <div class="slider">
+
+    <img id="frelanceimg" src="apply.png" alt="apply Image">
+  </div>
+  <div class="job-listings" id="job-listings">
+  </div>
+  
+  <div class="job-listings" id="job-listings">
+  </div>
+ 
+
+  <!-- Recommended Skills -->
+
+  <div class="container">
+      <h2>Recommended Skills</h2>
+      <ul>
+          <li>Graphic Design</li>
+          <li>Designers</li>
+          <li>Core Consulting Skills</li>
+          <li>Photoshop Designers</li>
+          <li>Logo Design Freelancers</li>
+          <li>Website Design Freelancers</li>
+          <li>PHP Developers</li>
+          <li>Illustrator Illustrators</li>
+          <li>HTML Developers</li>
+          <li>Data Entry Operators</li>
+          <li>JavaScript Developers</li>
+          <li>Software Architecture Designers</li>
+          <li>Excel Programmers</li>
+          <li>MySQL Developers</li>
+          <li>CSS Designers</li>
+          <li>WordPress Developers</li>
+          <li>Illustration Illustrators</li>
+          <li>3D Design Designers</li>
+          <li>Banner Design Designers</li>
+          <li>Article Writing Writers</li>
+          <li>Data Processing Executives</li>
+          <li>Content Writing Content Writers</li>
+          <li>HTML5 Developers</li>
+          <li>Python Developers</li>
+          <li>Copywriting Freelancers</li>
+          <li>Java Developers</li>
+          <li>Mobile App Development Developers</li>
+          <li>Android Developers</li>
+          <li>Project Management Project Managers</li>
+      </ul>
+  </div>
+
+
+  <div id="container1">
+      <h2>Browse Freelancers by Location</h2>
+      <ul>
+          <li>Freelancers in North America</li>
+          <li>Freelancers in Asia</li>
+          <li>Freelancers in Europe</li>
+          <li>Freelancers in Oceania</li>
+          <li>Freelancers in South America</li>
+          <li>Freelancers in Africa</li>
+          <li>Freelancers in Other Countries</li>
+      </ul>
+  </div>
+
+
+  <footer>Contact us at: example@example.com | Phone: 123-456-7890</footer>
+<script>
+    // Sample job listings (you can fetch these from a server)
+    var jobs = [
+        { 
+            title: 'FUll STACK DEVELOPER',
+            company: 'ABC Corp',
+            location: 'New York, NY',
+            freelancer: 'mikehurley',
+            country: 'India',
+            hireMe: true,
+            expertise: 'Google Ad- SEO--Backlinks-Meta/Insta-/SMM-Expert',
+            rating: 10.0,
+            reviews: 6663,
+            hourlyRate: 25,
+            skills: ['SEO', 'Link Building', 'Internet Marketing', 'Marketing', 'Advertising'],
+            description: 'Expert in SEO Ranking + Traffic 6600 ⭐⭐⭐⭐⭐+ Reviews, 2000+ satisfied clients Glowing Reviews! Elevate Your Business with Expertise in SEO, Google Ads, and Facebook Ads! ✌ Your digital journey deserves the best! Partner with the most reviewed and skilled SEO, Digital Marketing, and Website Development team of...'
+        },
+      
+        {
+            title: 'Graphic Designer',
+            company: 'ABC Design Studio',
+            location: 'Dhaka, Bangladesh',
+            freelancer: 'amin585147',
+            country: 'Bangladesh',
+            hireMe: true,
+            expertise: 'PLEASE PM ME OR AWARD ME GET THE BEST RESULT!',
+            rating: 8.5,
+            reviews: 1948,
+            hourlyRate: 20,
+            skills: ['Photoshop', 'Photo Editing', 'Graphic Design', 'Photoshop Design', 'Photography'],
+            description: 'I am a qualified Professional Graphic Designer and photo editor. I am working here almost 9 years and I completed 1850+ projects here. Photo editing and designing is a huge part of my life and I work hard to produce the highest quality, effective, innovative, timeless designs that my clients will love. I would love to...'
+        },
+        {
+            title: 'SEO Expert',
+            company: 'XYZ SEO Agency',
+            location: 'Mumbai, India',
+            freelancer: 'mahipal7',
+            country: 'India',
+            hireMe: true,
+            expertise: 'SEO Expert: Get #1 Rank Google | Organic Traffic',
+            rating: 9.2,
+            reviews: 1532,
+            hourlyRate: 15,
+            skills: ['SEO', 'Link Building', 'Internet Marketing', 'Marketing', 'Advertising'],
+            description: 'Highly Recommended 1530 + 5⭐ Reviews 11+ Years of SEO Experience 99% Jobs Success Rate Achieve a #1 Rank on Google Guaranteed SEO Improvements Results-Oriented Approach Hello, My name is Mahipal, and I\'ve successfully collaborated with over 1530+ clients on freelancer.com, I am an SEO Expert with 11+ years...'
+        },
+        {
+            title: 'Architect & 3D Designer',
+            company: 'ABC Architectural Firm',
+            location: 'Lisbon, Portugal',
+            freelancer: 'christiansoterod',
+            country: 'Portugal',
+            hireMe: true,
+            expertise: 'High End Architect | 3D Designer | Preferred Team',
+            rating: 9.4,
+            reviews: 497,
+            hourlyRate: 75,
+            skills: ['Building Architecture', 'AutoCAD', '3D Animation', 'CAD/CAM', '3ds Max'],
+            description: 'Preferred freelancer leading a team of architects specialized in architectural visualization, 3D modeling, animation, special effects and 2D drawings. We work with professional software such as AutoCad, 3dsMax, Sketchup Pro, Photoshop and After Effects (I myself have an international certificate signed from an...'
+        },
+        {
+            title: '3D Designer',
+            company: 'XYZ 3D Design Studio',
+            location: 'Mumbai, India',
+            freelancer: 'inderar88',
+            country: 'India',
+            hireMe: true,
+            expertise: '3D Designer | Bringing Ideas to Life',
+            rating: 9.5,
+            reviews: 1420,
+            hourlyRate: 12,
+            skills: ['3D Modelling', '3D Rendering', '3D Animation', '3ds Max', '3D Design'],
+            description: 'Hi, I\'m a 3D artist with more than 15 years of professional experience in developing designs for products, characters, buildings, printable models, vehicles, furniture, jewelry, and AR/VR models. I am skilled in the following applications: 3ds max, Maya, Z-Brush, Blender, Photoshop, AutoCAD, SolidWorks, Vray,...'  
+        },
+      {
+          title: 'SEO Intermidiate',
+          company: 'XYZ SEO Agency',
+          location: 'Mumbai, India',
+          freelancer: 'mahipal7',
+          country: 'India',
+          hireMe: true,
+          expertise: 'SEO Expert: Get #1 Rank Google | Organic Traffic',
+          rating: 9.0,
+          reviews: 1531,
+          hourlyRate: 15,
+          skills: ['SEO', 'Link Building', 'Internet Marketing', 'Marketing', 'Advertising'],
+          description: 'Highly Recommended 1530 + 5⭐ Reviews 11+ Years of SEO Experience 99% Jobs Success Rate Achieve a #1 Rank on Google Guaranteed SEO Improvements Results-Oriented Approach Hello, My name is Mahipal, and I\'ve successfully collaborated with over 1530+ clients on freelancer.com, I am an SEO Expert with 11+ years...'
+      },
+      { 
+          title: 'Web developer',
+          company: 'ABzC Corp',
+          location: 'New York, NY',
+          freelancer: 'mikehurley',
+          country: 'India',
+          hireMe: true,
+          expertise: 'Google Ad- SEO--Backlinks-Meta/Insta-/SMM-Expert',
+          rating: 10.0,
+          reviews: 6663,
+          hourlyRate: 25,
+          skills: ['SEO', 'Link Building', 'Internet Marketing', 'Marketing', 'Advertising'],
+          description: 'Expert in SEO Ranking + Traffic 6600 ⭐⭐⭐⭐⭐+ Reviews, 2000+ satisfied clients Glowing Reviews! Elevate Your Business with Expertise in SEO, Google Ads, and Facebook Ads! ✌ Your digital journey deserves the best! Partner with the most reviewed and skilled SEO, Digital Marketing, and Website Development team of...'
+      },
+      {
+          title: 'Professional Graphic Designerr',
+          company: 'XPC Design Studio',
+          location: 'Dhaka, Bangladesh',
+          freelancer: 'amin585147',
+          country: 'Bangladesh',
+          hireMe: true,
+          expertise: 'PLEASE PM ME OR AWARD ME GET THE BEST RESULT!',
+          rating: 8.5,
+          reviews: 1948,
+          hourlyRate: 20,
+          skills: ['Photoshop', 'Photo Editing', 'Graphic Design', 'Photoshop Design', 'Photography'],
+          description: 'I am a qualified Professional Graphic Designer and photo editor. I am working here almost 9 years and I completed 1850+ projects here. Photo editing and designing is a huge part of my life and I work hard to produce the highest quality, effective, innovative, timeless designs that my clients will love. I would love to...'
+      },
+      { 
+            title: 'FUll STACK DEVELOPER',
+            company: 'ABC Corp',
+            location: 'New York, NY',
+            freelancer: 'mikehurley',
+            country: 'India',
+            hireMe: true,
+            expertise: 'Google Ad- SEO--Backlinks-Meta/Insta-/SMM-Expert',
+            rating: 10.0,
+            reviews: 6663,
+            hourlyRate: 25,
+            skills: ['SEO', 'Link Building', 'Internet Marketing', 'Marketing', 'Advertising'],
+            description: 'Expert in SEO Ranking + Traffic 6600 ⭐⭐⭐⭐⭐+ Reviews, 2000+ satisfied clients Glowing Reviews! Elevate Your Business with Expertise in SEO, Google Ads, and Facebook Ads! ✌ Your digital journey deserves the best! Partner with the most reviewed and skilled SEO, Digital Marketing, and Website Development team of...'
+        },
+
+        {
+            title: 'Graphic Designer',
+            company: 'ABC Design Studio',
+            location: 'Dhaka, Bangladesh',
+            freelancer: 'amin585147',
+            country: 'Bangladesh',
+            hireMe: true,
+            expertise: 'PLEASE PM ME OR AWARD ME GET THE BEST RESULT!',
+            rating: 8.5,
+            reviews: 1948,
+            hourlyRate: 20,
+            skills: ['Photoshop', 'Photo Editing', 'Graphic Design', 'Photoshop Design', 'Photography'],
+            description: 'I am a qualified Professional Graphic Designer and photo editor. I am working here almost 9 years and I completed 1850+ projects here. Photo editing and designing is a huge part of my life and I work hard to produce the highest quality, effective, innovative, timeless designs that my clients will love. I would love to...'
+        },
+        {
+            title: 'SEO Expert',
+            company: 'XYZ SEO Agency',
+            location: 'Mumbai, India',
+            freelancer: 'mahipal7',
+            country: 'India',
+            hireMe: true,
+            expertise: 'SEO Expert: Get #1 Rank Google | Organic Traffic',
+            rating: 9.2,
+            reviews: 1532,
+            hourlyRate: 15,
+            skills: ['SEO', 'Link Building', 'Internet Marketing', 'Marketing', 'Advertising'],
+            description: 'Highly Recommended 1530 + 5⭐ Reviews 11+ Years of SEO Experience 99% Jobs Success Rate Achieve a #1 Rank on Google Guaranteed SEO Improvements Results-Oriented Approach Hello, My name is Mahipal, and I\'ve successfully collaborated with over 1530+ clients on freelancer.com, I am an SEO Expert with 11+ years...'
+        },
+        {
+            title: 'Architect & 3D Designer',
+            company: 'ABC Architectural Firm',
+            location: 'Lisbon, Portugal',
+            freelancer: 'christiansoterod',
+            country: 'Portugal',
+            hireMe: true,
+            expertise: 'High End Architect | 3D Designer | Preferred Team',
+            rating: 9.4,
+            reviews: 497,
+            hourlyRate: 75,
+            skills: ['Building Architecture', 'AutoCAD', '3D Animation', 'CAD/CAM', '3ds Max'],
+            description: 'Preferred freelancer leading a team of architects specialized in architectural visualization, 3D modeling, animation, special effects and 2D drawings. We work with professional software such as AutoCad, 3dsMax, Sketchup Pro, Photoshop and After Effects (I myself have an international certificate signed from an...'
+        },
+        {
+            title: '3D Designer',
+            company: 'XYZ 3D Design Studio',
+            location: 'Mumbai, India',
+            freelancer: 'inderar88',
+            country: 'India',
+            hireMe: true,
+            expertise: '3D Designer | Bringing Ideas to Life',
+            rating: 9.5,
+            reviews: 1420,
+            hourlyRate: 12,
+            skills: ['3D Modelling', '3D Rendering', '3D Animation', '3ds Max', '3D Design'],
+            description: 'Hi, I\'m a 3D artist with more than 15 years of professional experience in developing designs for products, characters, buildings, printable models, vehicles, furniture, jewelry, and AR/VR models. I am skilled in the following applications: 3ds max, Maya, Z-Brush, Blender, Photoshop, AutoCAD, SolidWorks, Vray,...'  
+        },
+      {
+          title: 'SEO Intermidiate',
+          company: 'XYZ SEO Agency',
+          location: 'Mumbai, India',
+          freelancer: 'mahipal7',
+          country: 'India',
+          hireMe: true,
+          expertise: 'SEO Expert: Get #1 Rank Google | Organic Traffic',
+          rating: 9.0,
+          reviews: 1531,
+          hourlyRate: 15,
+          skills: ['SEO', 'Link Building', 'Internet Marketing', 'Marketing', 'Advertising'],
+          description: 'Highly Recommended 1530 + 5⭐ Reviews 11+ Years of SEO Experience 99% Jobs Success Rate Achieve a #1 Rank on Google Guaranteed SEO Improvements Results-Oriented Approach Hello, My name is Mahipal, and I\'ve successfully collaborated with over 1530+ clients on freelancer.com, I am an SEO Expert with 11+ years...'
+      },
+      { 
+          title: 'Web developer',
+          company: 'ABzC Corp',
+          location: 'New York, NY',
+          freelancer: 'mikehurley',
+          country: 'India',
+          hireMe: true,
+          expertise: 'Google Ad- SEO--Backlinks-Meta/Insta-/SMM-Expert',
+          rating: 10.0,
+          reviews: 6663,
+          hourlyRate: 25,
+          skills: ['SEO', 'Link Building', 'Internet Marketing', 'Marketing', 'Advertising'],
+          description: 'Expert in SEO Ranking + Traffic 6600 ⭐⭐⭐⭐⭐+ Reviews, 2000+ satisfied clients Glowing Reviews! Elevate Your Business with Expertise in SEO, Google Ads, and Facebook Ads! ✌ Your digital journey deserves the best! Partner with the most reviewed and skilled SEO, Digital Marketing, and Website Development team of...'
+      },
+      {
+          title: 'Professional Graphic Designerr',
+          company: 'XPC Design Studio',
+          location: 'Dhaka, Bangladesh',
+          freelancer: 'amin585147',
+          country: 'Bangladesh',
+          hireMe: true,
+          expertise: 'PLEASE PM ME OR AWARD ME GET THE BEST RESULT!',
+          rating: 8.5,
+          reviews: 1948,
+          hourlyRate: 20,
+          skills: ['Photoshop', 'Photo Editing', 'Graphic Design', 'Photoshop Design', 'Photography'],
+          description: 'I am a qualified Professional Graphic Designer and photo editor. I am working here almost 9 years and I completed 1850+ projects here. Photo editing and designing is a huge part of my life and I work hard to produce the highest quality, effective, innovative, timeless designs that my clients will love. I would love to...'
+      }
+
+    ];
+  // Render job listings
+  var jobListingsContainer = document.getElementById('job-listings');
+  jobs.forEach(function(job) {
+      var jobDiv = document.createElement('div');
+      jobDiv.className = 'job';
+      jobDiv.innerHTML = `
+          <h3>${job.title}</h3>
+          <p>${job.company}</p>
+          <p>${job.location}</p>
+          <p>${job.freelancer}</p>
+          <p>${job.country}</p>
+          <p>${job.hireMe ? 'Hire Me' : ''}</p>
+          <p>${job.expertise}</p>
+          <p>Rating: ${job.rating}</p>
+          <p>Reviews: ${job.reviews}</p>
+          <p>Hourly Rate: $${job.hourlyRate}</p>
+          <p>Skills: ${job.skills.join(', ')}</p>
+          <p>${job.description}</p>
+          <button onclick="confirmApply('${job.title}')">Apply</button>
+      `;
+      jobListingsContainer.appendChild(jobDiv);
+  });
+
+  // Function to handle job application confirmation
+  function confirmApply(title) {
+      if (confirm(`Are you sure you want to apply for the job "${title}"?`)) {
+          applyForJob(title);
+      }
+  }
+
+  // Function to handle job application
+  function applyForJob(title) {
+      alert(`You have successfully applied for the job "${title}"!`);
+      console.log('Applied for job:', title);
+  }
+
+</script>
+  
+</body>
+</html>

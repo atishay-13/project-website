@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('signup.jpg'); 
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .signup-container {
+      background-color: #F6995C;
+      padding: 150px;
+      border-radius: 10px;
+  
+    }
+
+    .signup-container h2 {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .signup-form {
+      margin-top: 20px;
+    }
+
+    .signup-form input[type="text"],
+    .signup-form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .signup-form input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .signup-form input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .signup-form .signup-option {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .signup-form .signup-option a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .signup-form .signup-option a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="signup-container">
+    <h2>SIGN UP</h2>
+    <form class="signup-form" action="" method="post" onsubmit="return storeCredentials()">
+      <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+      <input type="text" id="email" name="email" placeholder="Email" required>
+      <input type="text" id="username" name="username" placeholder="Username" required>
+      <input type="password" id="password" name="password" placeholder="Password" required>
+      <input type="submit" value="Sign Up">
+    </form>
+
+  </div>
+
+  <script>
+    function storeCredentials() {
+      var fullname = document.getElementById("fullname").value;
+      var email = document.getElementById("email").value;
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Store user information in local storage or send to server
+      // Example: localStorage.setItem("fullname", fullname);
+      // Example: localStorage.setItem("email", email);
+      // Example: localStorage.setItem("username", username);
+      // Example: localStorage.setItem("password", password);
+
+      return true; // Allow form submission
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+/**************************************** CSS FOR ABOUT US PAGE*************************** */
+body {
+    margin: 0;
+    padding-bottom: 60px;
+    position: relative;
+    background-color: #FEFDED;
+}
+
+/* Section that contains top login signup*/
+/* Add this CSS to your existing stylesheet */
+
+#login a,
+#signup a,
+#title a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    padding: 5px; /* Add padding to ensure consistent size */
+    margin: 0; 
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
+}
+/* Add this CSS to your existing stylesheet */
+
+#login a:hover,
+#signup a:hover,
+#title a:hover {
+    color:#EBD9B4;
+
+}
+
+#login a{
+
+}
+#signup a{
+
+}
+#title a {
+
+}
+
+#login {
+    padding-left: 34%;
+    padding-right: 1.5%;
+    text-align: right;
+    list-style-type: none;
+    width: 33%; /* Set width to match the home section */
+    height: 100vh; /* Set height to match the viewport height */
+  
+}
+
+#signup {
+    padding-left: 0%;
+    padding-right: 0%;
+    text-align: right;
+    list-style-type: none;
+    cursor: pointer;
+
+}
+
+
+#title {
+    padding-right: 20%;
+    text-align: left;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+#logo {
+    float: left;
+    padding-left: 10px;
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    border-radius: 50%;
+    shape-outside: circle(50%);
+}
+
+#containerlogo {
+    background-color: #31363F;
+    color: #F7EEDD;
+    font-weight: bold;
+    margin-top:13px;
+    padding :1%;
+    width: 100%; /* Adjusted width */
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline;
+    padding: 3%;
+    font-size: 25px;
+}
+
+/* Section that contains list of pages - color can be used #58A399 #A25772*/
+#list1 {
+    background-color: #FEFDED;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 100%; /* Adjusted width */
+}
+
+nav ul {
+    list-style-type: none;
+    background-color: #76ABAE;
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+
+  padding-top: 8px;
+  padding-bottom: 8px;
+    width: 100%; /* Adjusted width */
+}
+
+nav ul li {
+    display: inline;
+    padding: 0 20px;
+    word-spacing: 10px;
+    cursor: pointer;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #161A30;
+    margin: 0 12px;
+}
+
+#list1 a {
+    text-decoration: none; 
+    color: inherit; 
+    padding: 15px; 
+    margin: 0; 
+    font-family: 'Roboto', sans-serif; 
+    transition: color 0.3s; 
+}
+
+#list1 a:hover {
+    color: #F1EEDC;
+    border-radius: 5px; 
+    padding: 15px; 
+    margin: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FEFDED;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    padding-bottom:100px;
+}
+
+header {
+    background-color:#76ABAE;
+    color: #FFF5E0;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; 
+  background-color: #003e79;
+  color: white;
+  text-align: center;
+  padding-top:10px;
+  line-height: 60px;
+}
+
+/* Company Info Section */
+.company-info {
+   display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.company-description {
+     flex: 1;
+    padding: 20px;
+}
+
+.company-image {
+     flex: 1;
+    padding: 20px;
+}
+
+.company-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    padding-bottom:10px;
+}

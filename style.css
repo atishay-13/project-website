@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding-bottom: 60px;
+    position: relative;
+    background-color: #FEFDED;
+}
+
+/* Section that contains top login signup*/
+/* Add this CSS to your existing stylesheet */
+#login a,
+  #signup a,
+  #title a {
+      text-decoration: none; /* Remove underline */
+      color: inherit; /* Inherit text color */
+      padding: 5px; /* Add padding to ensure consistent size */
+      margin: 0; 
+      font-family: 'Roboto', sans-serif; /* Use Roboto font */
+  }
+#login a:hover,
+#signup a:hover,
+#title a:hover {
+    color:#EBD9B4;
+
+}
+
+#login a{
+
+}
+#signup a{
+
+}
+#title a {
+
+}
+
+#login {
+    padding-left: 30%;
+    padding-right: 1.5%;
+    text-align: right;
+    list-style-type: none;
+}
+
+#signup {
+    padding-left: 4.5%;
+    padding-right: 0%;
+    text-align: right;
+    list-style-type: none;
+    cursor: pointer;
+
+}
+
+
+#title {
+    padding-right: 20%;
+    text-align: left;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+#logo {
+    float: left;
+    padding-left: 10px;
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    border-radius: 50%;
+    shape-outside: circle(50%);
+}
+
+#containerlogo {
+    background-color: #31363F;
+    color: #F7EEDD;
+    font-weight: bold;
+    margin-top:13px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 100%; /* Adjusted width */
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline;
+    padding: 3%;
+    font-size: 25px;
+}
+
+/* Section that contains list of pages - color can be used #58A399 #A25772*/
+#list1 {
+    background-color: #FEFDED;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 100%; /* Adjusted width */
+}
+
+nav ul {
+    list-style-type: none;
+    background-color: #76ABAE;
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+
+  padding-top: 8px;
+  padding-bottom: 8px;
+    width: 100%; /* Adjusted width */
+}
+
+nav ul li {
+    display: inline;
+    padding: 0 20px;
+    word-spacing: 10px;
+    cursor: pointer;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #161A30;
+    margin: 0 12px;
+}
+
+#list1 a {
+    text-decoration: none; 
+    color: inherit; 
+    padding: 15px; 
+    margin: 0; 
+    font-family: 'Roboto', sans-serif; 
+    transition: color 0.3s; 
+}
+
+#list1 a:hover {
+    color: #F1EEDC;
+    border-radius: 5px; 
+    padding: 15px; 
+    margin: 0;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #003e79;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+}
+
+.container {
+  padding: 10px;
+  background-color: #BED1CF;
+
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+.container  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  /* Allow list items to wrap onto the next line */
+}
+.container  li {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: black;
+    width: calc(33.33% - 5px); /* Divide equally into three columns with a 10px margin */
+    margin-right: 5px;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+#container1 {
+    padding: 20px;
+    background-color: #76ABAE;
+    color:#222831
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* CSS for headings */
+h2 {
+    padding : 10px;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+
+}
+.slider {
+    text-align: center;
+  padding-bottom: 5px;
+}
+
+.slider h2 {
+    font-size: 30px;
+    color: #944E63;
+    padding-bottom: 10px;
+    word-spacing: 10px;
+}
+
+#frelanceimg {
+    width: 100%;
+    padding-left: 0px;
+    float: center;
+    transition: none;
+    transform: none;
+}
+
+/* Category menu styles */
+.category-menu {
+    background-color: #31363F;
+    color: #F7EEDD;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.category-menu ul {
+    list-style-type: none;
+}
+
+.category-menu ul li {
+    display: inline;
+    padding: 0  20px;
+    word-spacing: 4px;
+    font-size: 20px;
+}
+
+.category-menu ul li a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+.category-menu a {
+    text-decoration: none; 
+    color: inherit; 
+    padding: 1px; 
+    margin: 0; 
+    font-family: 'Roboto', sans-serif; 
+    transition: color 0.1s; 
+}
+
+.category-menu a:hover {
+    color: #F3D7CA;
+    border-radius: 5px; 
+    padding: 1px; 
+    margin: 0;
+}
+
+
+/* Section that contains heading before images */
+h5 {
+    font-size: 48px;
+    text-align: center;
+    color: #76ABAE;
+    padding-top: 0px;
+    padding-bottom: 15px;
+}
+
+h4 {
+    padding-top: 5px;
+    padding-bottom: 0px;
+    font-family: bold;
+    font-size: 40px;
+    text-align: center;
+    color: #2D3250;
+}
+
+/* Section that contains images */
+#imagesection {
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    padding-top: 2px;
+    display: inline;
+}
+
+#o1 {
+    float: left;
+    height: 400px;
+    width: 465px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#o2 {
+    float: center;
+    height: 400px;
+    width: 475px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#o3 {
+    float: right;
+    height: 400px;
+    width: 465px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#o4 {
+    float: left;
+    height: 420px;
+    width: 465px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#o5 {
+      float: center;
+      margin-left:5px;
+      height: 420px;
+      width: 472px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+  }
+
+#o6 {
+    float: right;
+  margin-right:1px;
+    height: 425px;
+    width: 462px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#o7 {
+    float: center;
+    height: 600px;
+    width: 1440px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #003e79;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+}

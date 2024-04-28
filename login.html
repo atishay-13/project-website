@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('login.webp'); 
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background-color:  #F1EEDC;
+      opacity:0.9;
+      padding: 10px 30px 15px 30px; /* Adjusted padding */
+      border-radius: 10px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin: 0; /* Removed margin */
+      color: #344955;
+      font-size: 55px;
+    }
+
+    .login-form {
+      margin-top: 20px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+      width: calc(100% - 20px); /* Adjusted width */
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-form input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-form input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .login-form .error-message {
+      color: red;
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-container">
+    <h2>LOGIN</h2>
+    <form class="login-form" action="" method="post" onsubmit="return checkCredentials()">
+      <input type="text" id="username" name="username" placeholder="Username" required>
+      <input type="password" id="password" name="password" placeholder="Password" required>
+      <input type="submit" value="Login">
+      <div class="error-message" id="error-message"></div>
+    </form>
+  </div>
+
+  <script>
+    function checkCredentials() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Retrieve stored username and password from local storage
+      var storedUsername = localStorage.getItem("username");
+      var storedPassword = localStorage.getItem("password");
+
+      if (username === storedUsername && password === storedPassword) {
+        return true; // Allow login
+      } else {
+        document.getElementById("error-message").innerText = "Invalid username or password";
+        return false; // Prevent form submission
+      }
+    }
+  </script>
+
+</body>
+
+</html>
