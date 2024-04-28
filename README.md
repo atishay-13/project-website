@@ -19,4 +19,4 @@ Interactive Feedback System: Introducing a feedback mechanism where freelancers 
 
 
 
-___________________________if want to see the overview and screenshots you can go to pjwebreport file and see our idea , code and impimentation details and screenshots of website and its features that we have included._________________________
+___________________________if want to see the overview and screenshots you can go to project_website_report.pdf file and see our idea , code and impimentation details and screenshots of website and its features that we have included._________________________
